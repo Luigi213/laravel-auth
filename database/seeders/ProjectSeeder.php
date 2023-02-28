@@ -17,11 +17,10 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $newProject = new Project();
-
         for($i=0; $i<10; $i++){
+            $newProject = new Project();
             $newProject->titolo = Str::slug($faker->name(), '-');
-            $newProject->descrizione = $faker->paragraph(2);
+            $newProject->descrizione = $faker->paragraph(1);
 
             $newProject->save();
         }
