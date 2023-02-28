@@ -3,6 +3,9 @@
 @section('content')
     <div class="container mt-5">
         <div class="row">
+            <div class="col-12 mb-3">
+                <a class="btn btn-primary" href="{{route('admin.projects.create')}}">Add project</a>
+            </div>
             <div class="col-12">
                 <table class="table table-striped">
                     <thead>
