@@ -30,7 +30,12 @@
                             <td>
                                 <a class="btn-sm btn btn-primary" href="{{route('admin.projects.show', $project->titolo)}}"><i class="fas fa-eye"></i></a>
                                 <a class="btn-sm btn btn-warning" href="{{route('admin.projects.edit', $project->titolo)}}"><i class="fas fa-edit"></i></a>
-                                <a class="btn-sm btn btn-danger" href=""><i class="fas fa-trash"></i></a>
+                                <form class="d-inline" action="{{route('admin.projects.destroy', $project->titolo)}}" method="POST">
+                                    @csrf
+                                    
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-sm btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </form>
                             </td>
                         </tr>                 
                         @endforeach

@@ -87,7 +87,7 @@ class ProjectController extends Controller
 
         $project->update();
 
-        return redirect()->route('admin.projects.index')->with('message', 'Modidicato progetto');
+        return redirect()->route('admin.projects.index')->with('message', 'Modidicato con successo');
     }
 
     /**
@@ -98,6 +98,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin.projects.index')->with('message', 'Cancellazione con successo');
     }
 }
