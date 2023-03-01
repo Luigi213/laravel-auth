@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($projects as $project)
+                        @forelse ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->id }}</th>
                             <td>{{ $project->titolo }}</td>
@@ -37,8 +37,12 @@
                                     <button type="submit" class="btn-sm btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </form>
                             </td>
-                        </tr>                 
-                        @endforeach
+                        </tr>   
+                        @empty
+                        <tr>
+                            <td>Aggiungi qualcosa <a href="{{route('admin.projects.create')}}">QUI</a></td>    
+                        </tr>              
+                        @endforelse
                     </tbody>
                 </table>
             </div>
