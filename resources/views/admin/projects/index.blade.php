@@ -18,6 +18,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Titolo</th>
                             <th scope="col">Descrizione</th>
+                            <th scope="col">Azione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,11 @@
                             <th scope="row">{{ $project->id }}</th>
                             <td>{{ $project->titolo }}</td>
                             <td>{{ $project->descrizione }}</td>
+                            <td>
+                                <a class="btn-sm btn btn-primary" href="{{route('admin.projects.show', $project->titolo)}}"><i class="fas fa-eye"></i></a>
+                                <a class="btn-sm btn btn-warning" href=""><i class="fas fa-edit"></i></a>
+                                <a class="btn-sm btn btn-danger" href=""><i class="fas fa-trash"></i></a>
+                            </td>
                         </tr>                 
                         @endforeach
                     </tbody>
