@@ -29,7 +29,7 @@
                             <td>{{ $project->descrizione }}</td>
                             <td>
                                 <a class="btn-sm btn btn-primary" href="{{route('admin.projects.show', $project->titolo)}}"><i class="fas fa-eye"></i></a>
-                                <a class="btn-sm btn btn-warning" href=""><i class="fas fa-edit"></i></a>
+                                <a class="btn-sm btn btn-warning" href="{{route('admin.projects.edit', $project->titolo)}}"><i class="fas fa-edit"></i></a>
                                 <a class="btn-sm btn btn-danger" href=""><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>                 
